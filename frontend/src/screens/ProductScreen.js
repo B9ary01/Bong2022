@@ -76,7 +76,8 @@ Description:
 
       ) : (
 
-        <span className="error">Unavailable</span>
+      
+        <span className="danger">Unavailable</span>
 
       )}
 
