@@ -2,10 +2,10 @@ const data = {
     products: [
       {
         _id: '1',
-        name: 'red shirt',
+        name: 'gray shirt',
         category: 'Shirts',
         image: '/images/p1.jpg',
-        price: 14,
+        price: 8,
         countInStock: 17,
         brand: 'tsho',
         rating: 4.5,

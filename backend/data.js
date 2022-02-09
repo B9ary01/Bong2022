@@ -2,10 +2,10 @@ const data = {
     products: [
       {
         _id: '1',
-        name: 'red shirt',
+        name: 'blue shirt',
         category: 'Shirts',
         image: '/images/p1.jpg',
-        price: 14,
+        price: 19,
         countInStock: 17,
         brand: 'tsho',
         rating: 4.5,
@@ -14,7 +14,7 @@ const data = {
       },
       {
         _id: '2',
-        name: 'yo bag',
+        name: 'yubag',
         category: 'bag',
         image: '/images/p2.jpg',
         price: 100,
