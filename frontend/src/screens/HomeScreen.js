@@ -15,6 +15,7 @@ export default function HomeScreen() {
   }, [dispatch]);
 
     return (
+
       <div>
          {loading ? (
         <LoadingPage></LoadingPage>
@@ -28,5 +29,6 @@ export default function HomeScreen() {
         </div>
       )}
       </div>
+    
     );
   }
