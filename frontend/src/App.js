@@ -26,7 +26,7 @@ function App() {
       <Route path="/product/:id" element={<ProductScreen />}/>
       <Route path="/contact" element={<ContactScreen />}/>
 
-      <Route path="/" element={<HomeScreen />}>
+      <Route exact path="/" element={<HomeScreen />}>
 
       </Route>
       </Routes>
