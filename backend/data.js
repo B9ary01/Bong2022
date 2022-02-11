@@ -2,7 +2,7 @@ const data = {
     products: [
       {
         _id: '1',
-        name: 'blue shirt',
+        name: 'Jacket',
         category: 'Shirts',
         image: '/images/p1.jpg',
         price: 19,
@@ -14,7 +14,7 @@ const data = {
       },
       {
         _id: '2',
-        name: 'yubag',
+        name: 'vest',
         category: 'bag',
         image: '/images/p2.jpg',
         price: 100,
@@ -26,7 +26,7 @@ const data = {
       },
       {
         _id: '3',
-        name: 'rio watch',
+        name: 'cap',
         category: 'watch',
         image: '/images/p3.jpg',
         price: 220,
@@ -50,7 +50,7 @@ const data = {
       },
       {
         _id: '5',
-        name: 'wearable ',
+        name: 'hat ',
         category: 'band',
         image: '/images/p3.jpg',
         price: 65,
@@ -62,13 +62,25 @@ const data = {
       },
       {
         _id: '6',
-        name: 'cube',
+        name: 'b-cap',
         category: 'rubiks',
         image: '/images/p1.jpg',
         price: 139,
         countInStock: 6,
         brand: 'tyo',
         rating: 4.5,
+        numReviews: 15,
+        description: 'good product',
+      },
+      {
+        _id: '7',
+        name: 'jacket',
+        category: 'jimm',
+        image: '/images/p1.jpg',
+        price: 99,
+        countInStock: 6,
+        brand: 'jiky',
+        rating: 4,
         numReviews: 15,
         description: 'good product',
       },
