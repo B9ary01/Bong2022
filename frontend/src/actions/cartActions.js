@@ -14,5 +14,6 @@ export const addToCart = (productId, qty) => async (dispatch, getState) => {
       qty,
     },
   });
+  //store cart items in local storage so when you refresh page items stays in the cart
   localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
 };

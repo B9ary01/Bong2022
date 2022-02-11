@@ -93,6 +93,15 @@ a.brand {
   font-size: 3rem;
   font-weight: bold;
 }
+.badge{
+background-color: red;
+color:white;
+border-radius: 50%;
+padding: 0.2rem 0.7rem;
+font-size: 1.4rem;
+margin-left: 0.3rem;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -126,10 +135,21 @@ h2 {
 a {
   text-decoration: none;
 }
+
+.min-30 {
+  min-width: 30rem;
+}
+
 /* Image */
 img {
   border-radius: 0.5rem;
 }
+
+img.small {
+  max-width: 5rem;
+  width: 100%;
+}
+
 img.medium {
   max-width: 29rem;
   width: 100%;
