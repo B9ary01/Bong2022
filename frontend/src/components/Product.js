@@ -8,7 +8,7 @@ export default function Product(props){
 
     return(
     <div key={product._id} className="card">
-      
+
     <Link to={`/product/${product._id}`}>
       <img className="medium" src={product.image} alt={product.name} />
     </Link>
@@ -20,7 +20,7 @@ export default function Product(props){
         rating={product.rating}
         numReviews={product.numReviews}
       ></Rating>
-        <div className="price">${product.price}</div>
+        <div className="price">£{product.price}</div>
         </div>
           
 
