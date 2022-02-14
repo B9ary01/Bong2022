@@ -19,7 +19,7 @@ const data = {
 
     products: [
       {
-        _id: '1',
+        
         name: 'Jacket',
         category: 'Shirts',
         image: '/images/p1.jpg',
@@ -31,7 +31,6 @@ const data = {
         description: 'high quality product',
       },
       {
-        _id: '2',
         name: 'vest',
         category: 'bag',
         image: '/images/p2.jpg',
@@ -43,7 +42,7 @@ const data = {
         description: 'high quality product',
       },
       {
-        _id: '3',
+        
         name: 'cap',
         category: 'watch',
         image: '/images/p3.jpg',
@@ -55,7 +54,7 @@ const data = {
         description: 'high quality ',
       },
       {
-        _id: '4',
+        
         name: 'sunny glass',
         category: 'glass',
         image: '/images/p4.jpg',
@@ -67,7 +66,7 @@ const data = {
         description: 'high quality ',
       },
       {
-        _id: '5',
+        
         name: 'hat ',
         category: 'band',
         image: '/images/p3.jpg',
@@ -79,7 +78,7 @@ const data = {
         description: 'high quality ',
       },
       {
-        _id: '6',
+        
         name: 'b-cap',
         category: 'rubiks',
         image: '/images/p1.jpg',
@@ -91,7 +90,7 @@ const data = {
         description: 'good product',
       },
       {
-        _id: '7',
+        
         name: 'jacket',
         category: 'jimm',
         image: '/images/p1.jpg',

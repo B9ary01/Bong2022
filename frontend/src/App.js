@@ -5,6 +5,7 @@ import CartScreen from "./screens/CartScreen";
 import ContactScreen from "./screens/ContactScreen";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
+import SigninScreen from "./screens/signinScreen";
 
 function App() {
   const cart=useSelector(state => state.cart);
@@ -40,7 +41,10 @@ function App() {
       <Route path="/cart/:id" element={<CartScreen />}/>
       <Route path="/product/:id" element={<ProductScreen />}/>
       <Route path="/contact" element={<ContactScreen />}/>
+      <Route path="/signin" element={<SigninScreen />}/>
+
       <Route exact path="/" element={<HomeScreen />}>
+
       </Route>
       </Routes>
 </main>
