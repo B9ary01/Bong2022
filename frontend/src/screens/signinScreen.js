@@ -1,21 +1,43 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Link } from 'react-router-dom';
 import { signin } from '../actions/userActions';
+import { useNavigate } from "react-router";
+import { useLocation } from "react-router";
 
+import LoadingPage from '../components/LoadingPage';
+import MessagePage from '../components/MessagePage';
 
-export default function SigninScreen() {
+export default function SigninScreen(props) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
 const dispatch = useDispatch();
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    // sign in action
-  dispatch(signin(email,password));
-  };
+
+const {search} =useLocation();
+const qtyInUrl = new URLSearchParams(search).get('qty'); 
+const redirect= qtyInUrl?Number(qtyInUrl):1;
+//const redirect= props.location.search ? props.location.search.split('=')[1] : '/';
+
+
+
+const userSignin = useSelector ((state)=>state.userSignin);
+const {userInfo,loading,error}=userSignin;
+const navigate=useNavigate();
+
+  
+const submitHandler = (e) => { 
+    e.preventDefault(); dispatch(signin(email, password));
+     if (!e) { navigate("/"); } };
+
+  useEffect(()=>{
+    if(userInfo){
+      navigate('/');
+    }
+  }, [ props.history, redirect , userInfo]);
 
   return (
 
@@ -29,21 +51,14 @@ const dispatch = useDispatch();
 
         </div>
 
+        {loading && <LoadingPage></LoadingPage>}
+        {error && <MessagePage variant="danger">{error}</MessagePage>}
         <div>
 
           <label htmlFor="email">Email address</label>
 
-          <input
-
-            type="email"
-
-            id="email"
-
-            placeholder="Enter email"
-
-            required
-
-            onChange={(e) => setEmail(e.target.value)}
+          <input type="email" id="email" placeholder="Enter email" required
+                 onChange={(e) => setEmail(e.target.value)}
 
           ></input>
 
@@ -53,17 +68,8 @@ const dispatch = useDispatch();
 
           <label htmlFor="password">Password</label>
 
-          <input
-
-            type="password"
-
-            id="password"
-
-            placeholder="Enter password"
-
-            required
-
-            onChange={(e) => setPassword(e.target.value)}
+          <input type="password" id="password" placeholder="Enter password" required 
+               onChange={(e) => setPassword(e.target.value)}
 
           ></input>
 
@@ -73,9 +79,7 @@ const dispatch = useDispatch();
 
           <label />
 
-          <button className="primary" type="submit">
-
-            Sign In
+          <button className="primary" type="submit"> Sign In
 
           </button>
 
@@ -85,9 +89,7 @@ const dispatch = useDispatch();
 
           <label />
 
-          <div>
-
-            New customer? <Link to="/register">Create your account</Link>
+          <div> New customer? <Link to="/register">Create your account</Link>
 
           </div>
 
