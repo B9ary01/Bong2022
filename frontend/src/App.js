@@ -7,6 +7,8 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import SigninScreen from "./screens/signinScreen";
 import { signout } from "./actions/userActions";
+import RegisterScreen from "./screens/RegisterScreen";
+import ShippingScreen from "./screens/ShippingScreen";
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
           </div>
 
           <div>
+          <Link to="/contact">Contact</Link>
+
               <Link to="/cart">Cart
               {cartItems.length > 0 && (<span className="badge">{
                 cartItems.length
@@ -71,8 +75,11 @@ function App() {
       <Routes>
       <Route path="/cart/:id" element={<CartScreen />}/>
       <Route path="/product/:id" element={<ProductScreen />}/>
+      <Route path="/shipping" element={<ShippingScreen />}/>
+
       <Route path="/contact" element={<ContactScreen />}/>
       <Route path="/signin" element={<SigninScreen />}/>
+      <Route path="/register" element={<RegisterScreen />}/>
 
       <Route exact path="/" element={<HomeScreen />}>
 

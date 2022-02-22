@@ -36,7 +36,7 @@ export default function CartScreen(props) {
   };
 
   const checkoutHandler = () => {
-    navigate('/signin?redirect=shipping');
+    navigate('/shipping');
   };
 
  return (
@@ -57,8 +57,7 @@ export default function CartScreen(props) {
 
   <div>
 
-    <img src={item.image} alt={item.name} className="small"
-    ></img>
+    <img src={item.image} alt={item.name} className="small"></img>
 
   </div>
 
@@ -74,9 +73,7 @@ export default function CartScreen(props) {
 
       onChange={(e) =>
 
-        dispatch(
-
-          addToCart(item.product, Number(e.target.value))
+        dispatch( addToCart(item.product, Number(e.target.value))
 
         )}
 

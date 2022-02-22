@@ -184,7 +184,9 @@ color: #404040;
 }
 
 /* alert */
-
+.loading {
+  display: block !important;
+}
 .success{
   color:#20a020;
 }
@@ -243,4 +245,17 @@ color: #404040;
 }
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* checkout page*/
+.checkouts > div {
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+.checkouts > div.active {
+  border-top-color: #f08000;
+  color: #f08000;
 }
