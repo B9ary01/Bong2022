@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Data from "./data"
-
+import './shopScreen.css'
 export default function ShopScreen() {
   
 ///
@@ -24,16 +24,16 @@ const Card = ({ item }) => {
   return (
     <>
       <div className="">
-        <div className="">
+        <div className="row top">
           {item.map((Val) => {
             return (
               <div
-                className="medium"
+                className="card"
                 key={Val._id}
               >
                 <div className="">
-                  <img src={Val.image} alt={Val.name} className="" />
-                </div>
+                  <img className="medium" src={Val.image} alt={Val.name} />
+                  </div>
                 <div className="">
                   <div className="">
                     {Val.name} &nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;&nbsp;
@@ -41,6 +41,7 @@ const Card = ({ item }) => {
                   </div>
                   <div className="">{Val.description}</div>
                 </div>
+                
               </div>
             );
           })}
