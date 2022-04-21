@@ -1,29 +1,11 @@
-import bcrypt from 'bcryptjs';
-
 const data = {
-
-  users: [
-    {
-      name: 'Bong',
-      email: 'admin@yahoo.com',
-      password: bcrypt.hashSync('12345', 8),
-      isAdmin: true,
-    },
-    {
-      name: 'Kamal',
-      email: 'kamal@yahoo.com',
-      password: bcrypt.hashSync('12345', 8),
-      isAdmin: false,
-    },
-  ],
-
     products: [
       {
-        
-        name: 'Jacket',
+        _id: '1',
+        name: 'shirt',
         category: 'Shirts',
         image: '/images/p1.jpg',
-        price: 29,
+        price: 8,
         countInStock: 17,
         brand: 'tsho',
         rating: 4.5,
@@ -31,19 +13,20 @@ const data = {
         description: 'high quality product',
       },
       {
-        name: 't-hat',
+        _id: '2',
+        name: 'yo bag',
         category: 'bag',
-        image: '/images/p4.jpg',
-        price: 70,
+        image: '/images/p2.jpg',
+        price: 100,
         countInStock: 12,
-        brand: 'him',
+        brand: 'hima',
         rating: 4.0,
         numReviews: 10,
         description: 'high quality product',
       },
       {
-        
-        name: 'cap',
+        _id: '3',
+        name: 'watch',
         category: 'watch',
         image: '/images/p3.jpg',
         price: 220,
@@ -54,8 +37,8 @@ const data = {
         description: 'high quality ',
       },
       {
-        
-        name: 'sunny glass',
+        _id: '4',
+        name: ' glass',
         category: 'glass',
         image: '/images/p4.jpg',
         price: 78,
@@ -66,8 +49,8 @@ const data = {
         description: 'high quality ',
       },
       {
-        
-        name: 'hat ',
+        _id: '5',
+        name: 'wearable ',
         category: 'band',
         image: '/images/p3.jpg',
         price: 65,
@@ -78,9 +61,9 @@ const data = {
         description: 'high quality ',
       },
       {
-        
-        name: 'half-vest',
-        category: 'clothes',
+        _id: '6',
+        name: 'cube',
+        category: 'rubiks',
         image: '/images/p1.jpg',
         price: 139,
         countInStock: 6,
@@ -89,70 +72,11 @@ const data = {
         numReviews: 15,
         description: 'good product',
       },
-      {
-        
-        name: 'h-vest',
-        category: 'clothes',
-        image: '/images/p1.jpg',
-        price: 90,
-        countInStock: 6,
-        brand: 'tyo',
-        rating: 4,
-        numReviews: 5,
-        description: 'good product',
-      },
-      {
-        
-        name: 't-train',
-        category: 'shoes',
-        image: '/images/shoe1.jpg',
-        price: 90,
-        countInStock: 6,
-        brand: 'tyo',
-        rating: 4,
-        numReviews: 5,
-        description: 'good product',
-      },
-      {
-        
-        name: 'trainer',
-        category: 'shoes',
-        image: '/images/shoe2.jpeg',
-        price: 94,
-        countInStock: 3,
-        brand: 't shoe',
-        rating: 4,
-        numReviews: 5,
-        description: 'good product',
-      },
-      {
-        
-        name: 'h-vest',
-        category: 'clothes',
-        image: '/images/v.jpeg',
-        price: 30,
-        countInStock: 6,
-        brand: 'tvest',
-        rating: 4,
-        numReviews: 5,
-        description: 'good product',
-      },
-      {
-      
-        name: 'vests',
-        category: 'clothes',
-        image: '/images/v3.jpeg',
-        price: 20,
-        countInStock: 6,
-        brand: 'to vest',
-        rating: 4,
-        numReviews: 5,
-        description: 'good product',
-      },
-      
+
+
 
       {
-       
+        _id: '6',
         name: 'shoes',
         category: 'shoes',
         image: '/images/shoe2.jpeg',
@@ -165,7 +89,7 @@ const data = {
       },
 
       {
-       
+        _id: '7',
         name: 'shoe',
         category: 'shoes',
         image: '/images/shoe22.jpeg',
@@ -178,7 +102,7 @@ const data = {
       },
 
       {
-       
+        _id: '8',
         name: 'shoe',
         category: 'shoes',
         image: '/images/shoe3.jpeg',
@@ -190,7 +114,7 @@ const data = {
         description: 'high quality ',
       },
       {
-        
+        _id: '9',
         name: 'a-laptop',
         category: 'laptop',
         image: '/images/pc.jpeg',
@@ -203,7 +127,8 @@ const data = {
       },
 
       {
-              name: 'h-laptop',
+        _id: '10',
+        name: 'h-laptop',
         category: 'laptop',
         image: '/images/pc3.jpeg',
         price: 139,
@@ -214,7 +139,7 @@ const data = {
         description: 'good product',
       },
       {
-        
+        _id: '11',
         name: 'b-laptop',
         category: 'laptop',
         image: '/images/pc22.jpeg',
@@ -227,7 +152,7 @@ const data = {
       }
       ,
       {
-        
+        _id: '12',
         name: 'b-watch',
         category: 'watch',
         image: '/images/watch1.jpeg',
@@ -240,7 +165,7 @@ const data = {
       }
       ,
       {
-        
+        _id: '13',
         name: 'b-watch',
         category: 'watch',
         image: '/images/watch33.jpeg',
@@ -253,7 +178,7 @@ const data = {
       }
       ,
       {
-        
+        _id: '14',
         name: 'y-watch',
         category: 'watch',
         image: '/images/watch55.jpeg',
@@ -264,11 +189,9 @@ const data = {
         numReviews: 15,
         description: 'good product',
       }
-      
       ,
-
       {
-        
+        _id: '15',
         name: 'women-bag',
         category: 'bag',
         image: '/images/bag0.jpeg',
@@ -278,75 +201,8 @@ const data = {
         rating: 4.5,
         numReviews: 15,
         description: 'good product',
-      }
-      ,
-      {
-        
-        name: 'women-bag',
-        category: 'bag',
-        image: '/images/bag34.jpeg',
-        price: 19,
-        countInStock: 6,
-        brand: 'tyo',
-        rating: 4.5,
-        numReviews: 15,
-        description: 'good product',
-      }
-
-      ,
-      {
-        
-        name: 'women-bag',
-        category: 'bag',
-        image: '/images/bag23.jpeg',
-        price: 19,
-        countInStock: 6,
-        brand: 'tyo',
-        rating: 4.5,
-        numReviews: 15,
-        description: 'good product',
       },
-
-
-      {
-       
-        name: 'b-watch',
-        category: 'watch',
-        image: '/images/watch1.jpeg',
-        price: 139,
-        countInStock: 6,
-        brand: 'tyo',
-        rating: 4.5,
-        numReviews: 15,
-        description: 'good product',
-      }
-      ,
-      {
-     
-        name: 'b-watch',
-        category: 'watch',
-        image: '/images/watch33.jpeg',
-        price: 139,
-        countInStock: 6,
-        brand: 'tyo',
-        rating: 4.5,
-        numReviews: 15,
-        description: 'good product',
-      }
-      ,
-      {
       
-        name: 'y-watch',
-        category: 'watch',
-        image: '/images/watch55.jpeg',
-        price: 99,
-        countInStock: 6,
-        brand: 'tyo',
-        rating: 4.5,
-        numReviews: 15,
-        description: 'good product',
-      }
-      ,
 
     ],
   };

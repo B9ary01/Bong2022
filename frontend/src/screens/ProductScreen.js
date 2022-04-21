@@ -8,6 +8,8 @@ import { detailsProduct } from "../actions/ProductActions";
 import { useParams } from "react-router";
 
 import { useNavigate } from "react-router";
+
+
 export default function ProductScreen(props){
     const params = useParams(); 
     const productId = params.id;
@@ -26,6 +28,9 @@ export default function ProductScreen(props){
      // props.history.push(`/cart/${productId}?qty={qty}`);
      navigate(`/cart/${productId}?qty=${qty}`);
      };
+////
+
+///
 
       return (
 
@@ -40,6 +45,10 @@ export default function ProductScreen(props){
        
       <div>
       <Link to="/">Back to Home</Link>
+
+
+      
+     
       <div className="row top">
         <div className="col-2">
           <img className="large" src={product.image} alt={product.name}></img>
@@ -63,6 +72,9 @@ export default function ProductScreen(props){
 </li>
 </ul>
 </div>
+
+
+
 
 <div className="col-1">
 <div className="card card-body">
@@ -123,8 +135,6 @@ export default function ProductScreen(props){
   )
 }
 
-
-
 </ul>
 
 </div>
@@ -133,8 +143,17 @@ export default function ProductScreen(props){
 
 </div>
 
-</div>
 
+
+
+
+
+
+
+
+
+
+</div>
      )}
      </div>
 
