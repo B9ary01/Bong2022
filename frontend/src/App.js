@@ -10,7 +10,8 @@ import { signout } from "./actions/userActions";
 import RegisterScreen from "./screens/RegisterScreen";
 import ShippingScreen from "./screens/ShippingScreen";
 import ShopScreen from "./ShopScreen";
-
+import PaymentScreen from "./screens/PaymentScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 
 function App() {
 
@@ -35,7 +36,7 @@ function App() {
               <Link className="brand" to="/">bongs</Link>
           </div>
 
-          <div>
+          <div className="myLinks">
           <Link to="/shop">Shop</Link>
 
           <Link to="/contact">Contact</Link>
@@ -79,12 +80,17 @@ function App() {
     <main>
       <Routes>
       <Route path="/cart/:id" element={<CartScreen />}/>
+      <Route path="/cart" element={<CartScreen />}/>
+
       <Route path="/product/:id" element={<ProductScreen />}/>
       <Route path="/shipping" element={<ShippingScreen />}/>
       <Route path="/shop" element={<ShopScreen />}/>
 
       <Route path="/contact" element={<ContactScreen />}/>
+      <Route path="/payment" element={<PaymentScreen />}/>
 
+      <Route path="/placeholder" element={<PlaceOrderScreen />}/>
+      
       <Route path="/signin" element={<SigninScreen />}/>
       <Route path="/register" element={<RegisterScreen />}/>
 

@@ -16,6 +16,7 @@ userSignin:{
      shippingAddress: localStorage.getItem('shippingAddress')
       ? JSON.parse(localStorage.getItem('shippingAddress'))
       : {},
+      PaymentMethod: 'Paypal',
  },
 };
 
