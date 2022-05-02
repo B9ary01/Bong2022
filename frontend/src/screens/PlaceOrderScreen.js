@@ -1,27 +1,43 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Checkout from '../components/Checkout';
 import { useNavigate } from "react-router";
+import { createOrder } from '../actions/orderActions';
+import { ORDER_CREATE_RESET } from '../constants/orderConstants';
+import LoadingPage from '../components/LoadingPage';
+import MessagePage from '../components/MessagePage';
 
 
 export default function PlaceOrderScreen(props) {
-  const cart = useSelector((state) => state.cart);
   const navigate=useNavigate();
+  
+  const cart = useSelector((state) => state.cart);
 
   if (!cart.paymentMethod) {
     navigate('/payment');
   }
-  const toPrice = (num) => Number(num.toFixed(2)); // 5.123 => "5.12" => 5.12
+const orderCreate=useSelector((state) => state.orderCreate);
+const {loading, success, error, order}=orderCreate;
+
+  const toPrice = (num) => Number(num.toFixed(2)); 
   cart.itemsPrice = toPrice(
     cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0)
   );
   cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(10);
   cart.taxPrice = toPrice(0.15 * cart.itemsPrice);
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
+  
+  const dispatch= useDispatch();
   const placeOrderHandler = () => {
-    // TODO: dispatch place order action
-  };
+    dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));  };
+  useEffect(()=> {
+    if(success){
+     navigate(`/order/${order._id}`);
+      dispatch({type:ORDER_CREATE_RESET});
+    }
+  }, [dispatch, order,props.navigate,success]);
+
   return (
     <div>
       <Checkout step1 step2 step3 step4></Checkout>
@@ -126,11 +142,9 @@ export default function PlaceOrderScreen(props) {
 
 
 
-
-
-
-
               </li>
+              {loading && <LoadingPage></LoadingPage>}
+              {error && <MessagePage variant="danger">{error}</MessagePage>}
             </ul>
           </div>
         </div>
