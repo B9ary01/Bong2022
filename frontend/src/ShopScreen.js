@@ -1,7 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import LoadingPage from "./components/LoadingPage";
+import MessagePage from "./components/MessagePage";
 
 import Data from "./data"
 import './shopScreen.css'
+
+import { useDispatch, useSelector } from "react-redux";
+import Product from "./components/Product";
+
+import { listProducts } from "./actions/ProductActions";
+
+
 export default function ShopScreen() {
   
 ///
@@ -18,6 +27,15 @@ const filterItem = (curcat) => {
   setItem(newItem);
 };
 /////
+///
+
+const dispatch= useDispatch();
+const productList = useSelector( (state)=> state.productList);
+const {loading,error, products}= productList;
+
+useEffect(()=>{
+ dispatch(listProducts());
+}, [dispatch]);
 ///
 
 const Card = ({ item }) => {
@@ -97,7 +115,24 @@ const Buttons = ({ filterItem, setItem, menuItems }) => {
       setItem={setItem}
       menuItems={menuItems}
     />
-    <Card item={item} />
+    {/*<Card item={item} />*/}
+
+    <div>
+         {loading ? (
+        <LoadingPage></LoadingPage>
+      ) : error ? (
+        <MessagePage variant="danger">{error}</MessagePage>
+      ) : (
+        <div className="row center">
+          {products.map((product) => (
+            <Product key={product._id} product={product}></Product>
+          ))}
+              
+    
+        </div>
+ 
+      )}
+      </div>
   </div>
 </div>
 

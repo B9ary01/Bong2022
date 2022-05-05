@@ -12,6 +12,7 @@ import ShippingScreen from "./screens/ShippingScreen";
 import ShopScreen from "./ShopScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen from "./screens/OrderScreen";
 
 function App() {
 
@@ -91,6 +92,8 @@ function App() {
 
       <Route path="/placeholder" element={<PlaceOrderScreen />}/>
       
+      <Route path="/order/:id" element={<OrderScreen />}/>
+
       <Route path="/signin" element={<SigninScreen />}/>
       <Route path="/register" element={<RegisterScreen />}/>
 

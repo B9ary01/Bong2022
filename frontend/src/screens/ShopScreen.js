@@ -34,13 +34,16 @@ const filterItem = (curcat) => {
 <div className="">
   <div className="">
     <h1 className="col-12"> Filter</h1>
-    <Buttons
+   <Buttons
       filterItem={filterItem}
       setItem={setItem}
       menuItems={menuItems}
     />
     <Card item={item} />
+
+    
   </div>
+  
 </div>
 
 
