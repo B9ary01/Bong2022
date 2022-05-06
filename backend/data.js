@@ -20,10 +20,10 @@ const data = {
     products: [
       {
         
-        name: 'Jacket',
+        name: 'Watch',
         category: 'Shirts',
-        image: '/images/p1.jpg',
-        price: 29,
+        image: '/images/watch1.jpeg',
+        price: 89,
         countInStock: 17,
         brand: 'tsho',
         rating: 4.5,
@@ -31,10 +31,10 @@ const data = {
         description: 'high quality product',
       },
       {
-        name: 't-hat',
+        name: 'G-hat',
         category: 'bag',
         image: '/images/p4.jpg',
-        price: 70,
+        price: 30,
         countInStock: 12,
         brand: 'him',
         rating: 4.0,
@@ -43,10 +43,10 @@ const data = {
       },
       {
         
-        name: 'cap',
+        name: 'C-cap',
         category: 'watch',
         image: '/images/p3.jpg',
-        price: 220,
+        price: 10,
         countInStock: 9,
         brand: 'rioswatch',
         rating: 4.8,
@@ -55,22 +55,22 @@ const data = {
       },
       {
         
-        name: 'sunny glass',
-        category: 'glass',
+        name: 'Jio Cap',
+        category: 'clothes',
         image: '/images/p4.jpg',
-        price: 78,
+        price: 8,
         countInStock: 0,
-        brand: 'glassy',
+        brand: 'clothes',
         rating: 4.5,
         numReviews: 14,
         description: 'high quality ',
       },
       {
         
-        name: 'hat ',
-        category: 'band',
+        name: 'Bong-hat',
+        category: 'clothes',
         image: '/images/p3.jpg',
-        price: 65,
+        price: 15,
         countInStock: 2,
         brand: 'banner',
         rating: 4.5,
@@ -79,10 +79,63 @@ const data = {
       },
       {
         
-        name: 'half-vest',
+        name: 'Women bag',
+        category: 'bag',
+        image: '/images/bag23.jpeg',
+        price: 19,
+        countInStock: 6,
+        brand: 'tyo',
+        rating: 4.5,
+        numReviews: 15,
+        description: 'good product',
+      },
+
+
+      {
+       
+        name: 'bro-watch',
+        category: 'watch',
+        image: '/images/watch1.jpeg',
+        price: 139,
+        countInStock: 6,
+        brand: 'tyo',
+        rating: 4.5,
+        numReviews: 15,
+        description: 'good product',
+      }
+      ,
+      {
+     
+        name: 'bran-watch',
+        category: 'watch',
+        image: '/images/watch33.jpeg',
+        price: 139,
+        countInStock: 6,
+        brand: 'tyo',
+        rating: 4.5,
+        numReviews: 15,
+        description: 'good product',
+      }
+      ,
+      {
+      
+        name: 'new watch',
+        category: 'watch',
+        image: '/images/watch55.jpeg',
+        price: 99,
+        countInStock: 6,
+        brand: 'tyo',
+        rating: 4.5,
+        numReviews: 15,
+        description: 'good product',
+      }
+      ,
+      {
+        
+        name: 'hav-vest',
         category: 'clothes',
         image: '/images/p1.jpg',
-        price: 139,
+        price: 49,
         countInStock: 6,
         brand: 'tyo',
         rating: 4.5,
@@ -91,10 +144,10 @@ const data = {
       },
       {
         
-        name: 'h-vest',
+        name: 'hi-vest',
         category: 'clothes',
         image: '/images/p1.jpg',
-        price: 90,
+        price: 60,
         countInStock: 6,
         brand: 'tyo',
         rating: 4,
@@ -103,7 +156,7 @@ const data = {
       },
       {
         
-        name: 't-train',
+        name: 'new-trainer',
         category: 'shoes',
         image: '/images/shoe1.jpg',
         price: 90,
@@ -115,7 +168,7 @@ const data = {
       },
       {
         
-        name: 'trainer',
+        name: 'my trainer',
         category: 'shoes',
         image: '/images/shoe2.jpeg',
         price: 94,
@@ -127,7 +180,7 @@ const data = {
       },
       {
         
-        name: 'h-vest',
+        name: 'Hio-vest',
         category: 'clothes',
         image: '/images/v.jpeg',
         price: 30,
@@ -139,7 +192,7 @@ const data = {
       },
       {
       
-        name: 'vests',
+        name: 'Vests',
         category: 'clothes',
         image: '/images/v3.jpeg',
         price: 20,
@@ -153,7 +206,7 @@ const data = {
 
       {
        
-        name: 'shoes',
+        name: 'T-shoe',
         category: 'shoes',
         image: '/images/shoe2.jpeg',
         price: 65,
@@ -166,7 +219,7 @@ const data = {
 
       {
        
-        name: 'shoe',
+        name: 'H shoe',
         category: 'shoes',
         image: '/images/shoe22.jpeg',
         price: 65,
@@ -179,7 +232,7 @@ const data = {
 
       {
        
-        name: 'shoe',
+        name: 'Brand-trainer',
         category: 'shoes',
         image: '/images/shoe3.jpeg',
         price: 65,

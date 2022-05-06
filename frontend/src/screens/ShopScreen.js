@@ -33,7 +33,7 @@ const filterItem = (curcat) => {
 
 <div className="">
   <div className="">
-    <h1 className="col-12"> Filter</h1>
+    <h1 className="col-12"> </h1>
    <Buttons
       filterItem={filterItem}
       setItem={setItem}

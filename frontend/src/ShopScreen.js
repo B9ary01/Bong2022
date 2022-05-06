@@ -109,7 +109,7 @@ const Buttons = ({ filterItem, setItem, menuItems }) => {
 
 <div className="">
   <div className="">
-    <h1 className=""> Filter</h1>
+    <h1 >Our Products</h1>
     <Buttons
       filterItem={filterItem}
       setItem={setItem}

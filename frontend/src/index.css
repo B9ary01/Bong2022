@@ -96,6 +96,10 @@ a:hover {
 h1,h2{
   text-align: center;
 }
+.welcome{
+  font-size: 24px;
+  
+}
 
 /* Header */
 header a {
@@ -308,3 +312,21 @@ color: #404040;
   color: #f08000;
 }
 
+
+
+#social-media
+{
+background: #f8f9fa;
+  padding: 20px 0;
+
+}
+.social-icons img
+{
+ width: 60px;
+ transition: 0.5s;
+ height: 40px;
+}
+.social-icons a:hover img
+{
+transform: translateY(-10px);
+}

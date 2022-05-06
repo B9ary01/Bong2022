@@ -4,6 +4,13 @@ import LoadingPage from '../components/LoadingPage';
 import MessagePage from '../components/MessagePage';
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../actions/ProductActions";
+import img1 from '../img/shoe3.jpeg';
+
+import cam6 from '../img/cam6.jpeg';
+import v2 from '../img/watch1.jpeg';
+
+
+
 export default function HomeScreen() {
   
     (function(d, m){
@@ -17,7 +24,7 @@ export default function HomeScreen() {
 /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
 
 
-  
+
   const dispatch= useDispatch();
   const productList = useSelector( (state)=> state.productList);
   const {loading,error, products}= productList;
@@ -49,9 +56,41 @@ export default function HomeScreen() {
       )}
           
           */}
-          <h1>Welcom to Bong Ecommerce</h1>
-          <h2>Our latest products</h2>
+        
+          <section class="pt-2 pb-4">
 
+  <div class="container">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="col-md-12 text-center">
+        <h1 className="welcome">Welcom to Bong Ecommerce. 
+        </h1>
+        
+</div>
+</div>
+</div>
+</section>
+          <h1>Our Latest Products</h1>
+          <section class="pt-2 pb-4">
+          <div class="jumbotron jumbotron-fluid">
+      <div class="col-md-12 text-center">
+<div className="row">
+      <div class=" col-md-4 text-center">
+        <img className="small" class="img-fluid qualities-img p-3" src={img1} alt="trainer image"/>
+        <h2>Trainer</h2>
+    </div>
+
+      <div class="col-md-4 text-center">
+      <img className="small" class="img-fluid qualities-img p-3" src={cam6} alt="camera image"/>
+      <h2>Camera</h2>
+  </div>
+  <div class="col-md-4 text-center">
+    <img className="small" class="img-fluid qualities-img p-3" src={v2} alt="watch image"/>
+    <h2>Watch</h2>
+ </div>
+ </div>
+</div>
+</div>
+</section>
           {loading ? (
         <LoadingPage></LoadingPage>
       ) : error ? (
@@ -59,18 +98,27 @@ export default function HomeScreen() {
       ) : (
        
        <div className="row center">
-          {products.map((product) => (
+          {/*{products.map((product) => (
             
             <Product key={product._id} product={product}></Product>
-          ))}
+          ))}*/}
               
     
         </div>
  
       )}
-                <h1>About Bong Ecommerce</h1>
-                <h1>Subscribe to Bong Ecommerce Channels</h1>
+                <section>
+                <div class="container">
+    <div class="jumbotron jumbotron-fluid">
+                  <h1>About Bong Ecommerce</h1>
+                <p>Founded in October 2021 based in Namche, Solu, Bong is an eCommerce platform. We try best to offer quality products to all customers.</p>
+            
+            </div>
+            </div>
+            </section>
+            
 
+           
 
       </div>
 
