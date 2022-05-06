@@ -30,13 +30,15 @@ export default function HomeScreen() {
     return (
      
 
-      <div>
+     <div>
+        {/*
          {loading ? (
         <LoadingPage></LoadingPage>
       ) : error ? (
         <MessagePage variant="danger">{error}</MessagePage>
       ) : (
-        <div className="row center">
+       
+       <div className="row center">
           {products.map((product) => (
             <Product key={product._id} product={product}></Product>
           ))}
@@ -45,6 +47,31 @@ export default function HomeScreen() {
         </div>
  
       )}
+          
+          */}
+          <h1>Welcom to Bong Ecommerce</h1>
+          <h2>Our latest products</h2>
+
+          {loading ? (
+        <LoadingPage></LoadingPage>
+      ) : error ? (
+        <MessagePage variant="danger">{error}</MessagePage>
+      ) : (
+       
+       <div className="row center">
+          {products.map((product) => (
+            
+            <Product key={product._id} product={product}></Product>
+          ))}
+              
+    
+        </div>
+ 
+      )}
+                <h1>About Bong Ecommerce</h1>
+                <h1>Subscribe to Bong Ecommerce Channels</h1>
+
+
       </div>
 
     );

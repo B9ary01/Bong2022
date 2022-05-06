@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { createOrder, detailsOrder } from '../actions/orderActions';
+import { createOrder, detailsOrder, payOrder } from '../actions/orderActions';
 import LoadingPage from '../components/LoadingPage';
 import MessagePage from '../components/MessagePage';
 import { useParams } from "react-router";
 import Axios from 'axios';
 import { PayPalButton } from 'react-paypal-button-v2';
+import { ORDER_PAY_RESET } from '../constants/orderConstants';
 
 
 export default function OrderScreen(props) {
@@ -22,6 +23,12 @@ export default function OrderScreen(props) {
 //  const orderId = props.match.params.id;
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
+
+  const orderPay= useSelector((state)=> state.orderPay);
+  const {loading: loadingPay, 
+    error:errorPay, 
+    success:successPay} = orderPay;
+
   const dispatch = useDispatch();
   useEffect(() => {
     
@@ -38,7 +45,9 @@ export default function OrderScreen(props) {
     };
     document.body.appendChild(script);
   };
-  if (!order) {
+  if (!order || successPay || (order && order._id !== orderId)) {
+    
+    dispatch({type:ORDER_PAY_RESET})
     dispatch(detailsOrder(orderId));
   } else {
     if (!order.isPaid) {
@@ -49,10 +58,10 @@ export default function OrderScreen(props) {
       }
     }
   }
-}, [dispatch, order, orderId, sdkReady]);
+}, [dispatch, order, orderId, sdkReady,successPay]);
 
-const successPaymentHnadler = () => {
-  // dispatch pay order
+const successPaymentHandler = (paymentResult) => {
+  dispatch(payOrder(order, paymentResult))  
 };
 
   return loading ? (
@@ -66,7 +75,7 @@ const successPaymentHnadler = () => {
         <div className="col-2">
           <ul>
             <li>
-              <div className="card card-body">
+              <div className="card-body">
                 <h2>Shipping</h2>
                 <p>
                   <strong>Name:</strong> {order.shippingAddress.fullName} <br />
@@ -85,7 +94,7 @@ const successPaymentHnadler = () => {
               </div>
             </li>
             <li>
-              <div className="card card-body">
+              <div className="card-body">
                 <h2>Payment</h2>
                 <p>
                   <strong>Method:</strong> {order.paymentMethod}
@@ -100,7 +109,7 @@ const successPaymentHnadler = () => {
               </div>
             </li>
             <li>
-              <div className="card card-body">
+              <div className="card-body">
                 <h2>Order Items</h2>
                 <ul>
                   {order.orderItems.map((item) => (
@@ -131,13 +140,13 @@ const successPaymentHnadler = () => {
           </ul>
         </div>
         <div className="col-1">
-          <div className="card card-body">
+          <div className="card-body">
             <ul>
               <li>
                 <h2>Order Summary</h2>
               </li>
               <li>
-                <div className="row">
+                <div className="">
                   <div>Items</div>
                   <div>${order.itemsPrice.toFixed(2)}</div>
                 </div>
@@ -170,10 +179,18 @@ const successPaymentHnadler = () => {
                   {!sdkReady ? (
                     <LoadingPage></LoadingPage>
                   ) : (
+                  
+                    <>
+                      {errorPay && (
+                        <MessagePage variant="danger">{errorPay}</MessagePage>
+                      )}
+                      {loadingPay && <LoadingPage></LoadingPage>}
+
                     <PayPalButton
                       amount={order.totalPrice}
-                      onSuccess={successPaymentHnadler}
+                      onSuccess={successPaymentHandler}
                     ></PayPalButton>
+                    </>
                   )}
                 </li>
               )}

@@ -45,7 +45,7 @@ const {loading, success, error, order}=orderCreate;
         <div className="col-2">
           <ul>
             <li>
-              <div className="card">
+              <div className="card-body">
                 <h2>Shipping</h2>
                 <p className="card-order">
                   <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
@@ -56,7 +56,7 @@ const {loading, success, error, order}=orderCreate;
               </div>
             </li>
             <li>
-              <div className="card card-body">
+              <div className="card-body">
                 <h2>Payment</h2>
                 <p >
                   <strong>Method:</strong> {cart.paymentMethod}
@@ -64,13 +64,13 @@ const {loading, success, error, order}=orderCreate;
               </div>
             </li>
             <li>
-              <div className="">
+              <div className="card-body">
                 <h2>Order Items</h2>
 
                 <ul>
                   {cart.cartItems.map((item) => (
                     <li key={item.product}>
-                      <div className="card">
+                      <div className="card-body">
                         <div>
                           <img
                             src={item.image}
@@ -97,13 +97,13 @@ const {loading, success, error, order}=orderCreate;
           </ul>
         </div>
         <div className="col-1">
-          <div className="card card-body">
+          <div className="card-body">
             <ul>
               <li>
                 <h2>Order Summary</h2>
               </li>
               <li>
-                <div className="row">
+                <div className="">
                   <div>Items</div>
                   <div>${cart.itemsPrice.toFixed(2)}</div>
                 </div>

@@ -83,6 +83,8 @@ footer {
   background-color: #203040;
   color: #ffffff;
 }
+
+
 /* Common */
 a {
   text-decoration: none;
@@ -91,6 +93,10 @@ a {
 a:hover {
   color: #ff8000;
 }
+h1,h2{
+  text-align: center;
+}
+
 /* Header */
 header a {
   color: #ffffff;
@@ -129,6 +135,8 @@ margin-left: 0.3rem;
 
 .col-1{
   flex: 1 1 25rem;
+padding: 1rem;
+ 
 }
 
 .col-2{
@@ -182,9 +190,14 @@ img.large{
 }
 .card-body {
   padding: 1rem;
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+
 }
 .card-body > * {
   margin-bottom: 0.5rem;
+  
 }
 .card-order{
   max-width: 200px;
@@ -238,6 +251,12 @@ color: #404040;
 .alert-danger {
   color: #a02020;
   background-color: #ffe0e0;
+} 
+
+
+.alert-success {
+  color: green;
+  background-color:greenyellow;
 } 
 
 /* Form */
