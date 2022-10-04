@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "test": "nodemon --watch backend --exec node --experimental-modules backend/server.js",
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
